@@ -1,0 +1,22 @@
+name: Thomas Johansen
+description: "Thomas Johansen ~> thomasjo"
+url: "http://thomasjo.com"
+permalink: /blog/:year/:month/:day/:title.html
+
+safe: true
+markdown: redcarpet
+highlighter: pygments
+
+redcarpet:
+  extensions:
+    - smart
+    - no_intra_emphasis
+    - tables
+    - autolink
+
+gems:
+  - jekyll-redirect-from
+
+exclude:
+  - Gemfile
+  - Gemfile.lock

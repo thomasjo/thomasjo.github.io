@@ -1,6 +1,8 @@
 name: Thomas Johansen
 description: "Thomas Johansen ~> thomasjo"
 url: "http://thomasjo.com"
+email: "thomasjo@gmail.com"
+
 permalink: /blog/:year/:month/:day/:title.html
 
 safe: true

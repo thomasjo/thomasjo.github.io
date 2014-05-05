@@ -103,3 +103,4 @@ DEPENDENCIES
   compass
   github-pages
   jekyll-redirect-from
+  jekyll-sitemap

@@ -3,7 +3,7 @@ layout: default
 ---
 
 <section id="articles">
-  {% for post in site.posts %}
+  {% for post in site.posts limit: 3 %}
     <article class="post">
       <header>
         <span class="metadata">{{ post.date | date: "%B %d %Y" }}</span>

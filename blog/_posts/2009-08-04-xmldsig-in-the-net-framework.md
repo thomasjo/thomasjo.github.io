@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "XMLDSIG in the .NET framework"
-date: 2009-08-04
-categories: software-development
 redirect_from:
   - /2009/08/04/xmldsig-in-the-net-framework/
 ---

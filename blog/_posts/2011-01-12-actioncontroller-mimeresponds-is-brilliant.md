@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "ActionController::MimeResponds is brilliant"
-date: 2011-01-12
-categories: software-development
 redirect_from:
   - /2011/01/12/actioncontroller-mimeresponds-is-brilliant/
 ---

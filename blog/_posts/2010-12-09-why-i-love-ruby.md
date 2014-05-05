@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Why I love Ruby"
-date: 2010-12-09
-categories: software-development
 redirect_from:
   - /2010/12/09/why-i-love-ruby/
 ---

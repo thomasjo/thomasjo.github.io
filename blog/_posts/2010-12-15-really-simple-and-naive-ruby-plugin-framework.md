@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Really simple and na&iuml;ve Ruby plugin framework"
-date: 2010-12-15
-categories: software-development
 redirect_from:
   - /2010/12/15/really-simple-and-naive-ruby-plugin-framework/
 ---

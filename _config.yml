@@ -3,7 +3,7 @@ description: "Thomas Johansen ~> thomasjo"
 url: "http://thomasjo.com"
 email: "thomasjo@gmail.com"
 
-permalink: /blog/:year/:month/:day/:title.html
+permalink: /:categories/:year/:month/:day/:title.html
 
 safe: false # NOTE: Will always be set to true in production.
 markdown: redcarpet

@@ -17,4 +17,12 @@ layout: default
         <a href="{{ post.url }}" class="read-more">Continue reading &rarr;</a>
     </article>
   {% endfor %}
+
+  {% if site.categories.blog | size >= 3 %}
+    {% assign archive_url = "/blog/archive.html" %}
+    <section class="meta">
+      <header><h2><a href="{{ archive_url }}">Archive</a></h2></header>
+      Looking for <a href="{{ archive_url }}" class="elusive">archived posts</a>?
+    </meta>
+  {% endif %}
 </section>

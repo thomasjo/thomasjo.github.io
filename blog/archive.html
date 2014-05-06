@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<header>
+  <h1><a href="{{ page.url }}">Archive</a></h1>
+</header>
+
+<section>
+  <ol>
+    {% for post in site.categories.blog %}
+      {% if forloop.index == 4 %}
+        <li class="separator"></li>
+      {% endif %}
+      <li>
+        <span class="metadata">{{ post.date | date: "%Y-%m-%d" }}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+</section>

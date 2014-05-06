@@ -67,10 +67,7 @@ header#nav {
   header {
     margin-bottom: 10px;
 
-    h1 {
-      font-size: 34px;
-      line-height: 1.2;
-
+    h1, h2 {
       a, a:active, a:visited {
         color: $theme-color;
         text-decoration: none;
@@ -79,6 +76,16 @@ header#nav {
       a:hover {
         color: $theme-alternate-color;
       }
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
     }
 
     .metadata {
@@ -172,6 +179,34 @@ header#nav {
 
       ul {
         list-style-type: circle;
+      }
+    }
+  }
+
+  ol {
+    li {
+      &.separator {
+        border-top: 1px solid transparent;
+        margin: 4px 0 5px;
+      }
+      .metadata {
+        display: inline-block;
+        margin-right: 15px;
+        color: $unimportant-color;
+      }
+    }
+  }
+
+  section.meta {
+    a.elusive {
+      &:visited {
+        border-bottom-color: $link-color;
+        color: $link-color;
+      }
+
+      &:hover {
+        border-bottom-color: $link-color + #222;
+        color: $link-color + #222;
       }
     }
   }

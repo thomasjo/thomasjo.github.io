@@ -15,7 +15,7 @@ been for Rails. Ruby is a remarkably beautiful language, and I love working with
 ## Freedom to hang ourselves
 To me, and infinitely more prominent people like David Heinemeier Hansson, Ruby is very much about
 [freedom](http://tekpub.com/conferences/rubyconf2010/dhh). Freedom to shape the language to suit
-our purpose and fulfil our needs.
+our purpose and fulfill our needs.
 Ruby will likely never feel old or outdated, because we are free to change it, to create our
 own versions of the language. The killer feature is that we can do this without needing to
 change the Ruby source and compiling a new version of the language -- we can do it from within
@@ -25,10 +25,10 @@ This is the point where many die-hard supporters of statically typed, compiled l
 usually stop and go "What? That cannot possibly be safe? How do you guarantee that X does what
 X usually does?" The answer is that you don't, but why do you need it to? As long as you don't
 fundamentally alter (which I would interject might be correct in some scenarios) built-in types
-and so on, what is the problem of changing the behaviour to better suit the tasks at hand?
+and so on, what is the problem of changing the behavior to better suit the tasks at hand?
 Are you really willing to trade freedom for security? Even if that freedom meant you could
 create beautiful code and focus more solving the tasks at hand, as opposed to having
-"guaranteed" runtime behaviour, type safety etc?
+"guaranteed" runtime behavior, type safety etc?
 When was the last time static type checking saved your day? As DHH himself said in his keynote
 at [RubyConf 2010](http://www.rubyconf.org/) as a response to the oft cited "Just enough rope to
 hang yourself with" comment; "Should we outlaw rope, just because people can hang themselves

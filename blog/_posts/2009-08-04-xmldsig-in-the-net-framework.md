@@ -58,7 +58,7 @@ transform I ended up using was the
 transform, as it lends itself very well to extracting the enveloped document and
 using it in another context.
 
-```csharp
+~~~ csharp
 public static class XmlDsig
 {
     private const LoadOptions SafeLoadOptions = LoadOptions.PreserveWhitespace;
@@ -158,7 +158,7 @@ public static class XmlDsig
         }
     }
 }
-```
+~~~
 
 I had to make another little adjustment to get everything to work correctly, and
 that was explicitly setting the canonicalization method. Changing the transform,
@@ -172,16 +172,16 @@ If you don't want the variant I needed (enveloping), then changing the code
 sample above to produce signatures of the enveloped kind, is trivial; first make
 sure to remove the following two lines:
 
-```csharp
+~~~ csharp
 signedXml.AddObject(dataObject);
 signedXml.SignedInfo.CanonicalizationMethod = SignedXml.XmlDsigExcC14NTransformUrl;
-```
+~~~
 
 The next step is to change the GetSignatureReference method; we need to replace
 the transform implementation with something that is suitable for the enveloped
 signature.
 
-```csharp
+~~~ csharp
 private static Reference GetSignatureReference()
 {
     var signatureReference = new Reference();
@@ -189,12 +189,12 @@ private static Reference GetSignatureReference()
 
     return signatureReference;
 }
-```
+~~~
 
 We also need to add an extra argument to the GetSignedDocument method, so that
 we can pass in the original document.
 
-```csharp
+~~~ csharp
 private static XDocument GetSignedDocument(XNode originalDocument, SignedXml signedXml)
 {
     string signatureXml = signedXml.GetXml().OuterXml;
@@ -210,7 +210,7 @@ private static XDocument GetSignedDocument(XNode originalDocument, SignedXml sig
 
     return signedDocument;
 }
-```
+~~~
 
 If you spot any errors, please let me know, so that there can exist at least one
 correct example of using XMLDSIG in the .NET framework.

@@ -12,7 +12,7 @@ module in Rails ActionPack really is. For the longest time when using `respond_w
 
 I've written code similar to this whenever I've needed to override the default behavior:
 
-```ruby
+~~~ ruby
 respond_to :html, :json
 
 # .. other actions omitted for brevity
@@ -32,7 +32,7 @@ def create
     format.json { render :json => @entry }
   end
 end
-```
+~~~
 
 My assumption was that if I needed to change the default behavior, I had to more or less
 mimic the behavior of `respond_to` (not to be confused with the `respond_to` as seen in
@@ -41,13 +41,13 @@ Well, it turns out that you only need to override that which deviates from the d
 behavior and the rest will still be handled as per the default. The `respond_with` block
 in the previous example can be simplified as follows:
 
-```ruby
+~~~ ruby
 respond_with @entry, :location => discussion_url(@discussion) do |format|
   if @entry.new_record?
     format.html { render 'discussions/show' }
   end
 end
-```
+~~~
 
 The only thing that deviates from the standard behavior, is the fact I want to render a
 template belonging to another controller and action (the one that initiated the HTTP POST)

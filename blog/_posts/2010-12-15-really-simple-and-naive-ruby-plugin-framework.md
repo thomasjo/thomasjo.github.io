@@ -25,7 +25,7 @@ important role in meta-programming. Undoubtedly the most infamous of all the hoo
 `method_missing`. As the name suggest, it's the hook that allows you to intercept calls to
 undefined methods.
 
-```ruby
+~~~ ruby
 class Hello
   def method_missing(name, *args)
     "Hello #{name.capitalize}!"
@@ -34,7 +34,7 @@ end
 
 hello = Hello.new
 puts hello.neighbour  # "Hello Neighbour!"
-```
+~~~
 
 ## Respect the hook
 To implement the plugin framework, I decided to leverage a seemingly under-appreciated hook
@@ -42,7 +42,7 @@ found on `Class` called `inherited`. Yet again, the name gives it all away - thi
 called whenever the class is implemented (sub-classed.) We can utilise this hook to implement a
 simple plugin registration system packaged up in a module.
 
-```ruby
+~~~ ruby
 module Plugin
   module ClassMethods
     def repository
@@ -58,7 +58,7 @@ module Plugin
     klass.extend ClassMethods  # Somewhat controversial
   end
 end
-```
+~~~
 
 Because we want to add singleton methods to whatever class includes our plugin module, we use
 a common, albeit slightly controversial technique; leverage another hook - `#included` - to
@@ -68,7 +68,7 @@ automagically extend the target class with the our `ClassMethods` modules.
 With the `Plugin` module we have the foundation needed to implement various types of plugins;
 let's create a very silly plugin type for displaying various kinds of messages.
 
-```ruby
+~~~ ruby
 # ./lib/message_plugin.rb
 require './lib/plugin'
 
@@ -93,17 +93,17 @@ class GoodbyeWorld < MessagePlugin
     puts 'Goodbye World... :-('
   end
 end
-```
+~~~
 
 Because we've taken advantage of the `inherited` hook, all that is necessary for plugins of
 type `MessagePlugin` to work, is to require the files containing the implementations, e.g.
 a directory called "plugins."
 
-```ruby
+~~~ ruby
 dir = './plugins'
 $LOAD_PATH.unshift(dir)
 Dir[File.join(dir, '*.rb')].each {|file| require File.basename(file) }
-```
+~~~
 
 Now all that is required for someone to add a new message to our application, is to inherit
 from `MessagePlugin` and drop the implementation into the "plugins" folder.
@@ -113,7 +113,7 @@ The `MessagePlugin` is extremely simple - what if we want to pass data to a plug
 only want to pass the data to plugins that can handle that type of data. An easy way
 of pulling this off, is to query the registered plugins on whether they can handle it.
 
-```ruby
+~~~ ruby
 # ./lib/type_handler_plugin.rb
 require './lib/plugin'
 
@@ -146,7 +146,7 @@ class TimeHandler < TypeHandlerPlugin
     puts "Formatted Time: #{data.strftime '%A, %B %m, %Y'}"
   end
 end
-```
+~~~
 
 The `#can_handle?(type)` predicate method hands the responsibility over to the plugins, thus
 requiring no changes to any other class whenever we add a new type and/or type handler to the
@@ -156,7 +156,7 @@ application. The Open/Closed Principle remains unviolated.
 Just for good measure, here is a rather silly test harness for running the various plugins
 we've peeked at - enjoy responsibly!
 
-```ruby
+~~~ ruby
 require './lib/array'
 require './lib/message_plugin'
 require './lib/type_handler_plugin'
@@ -192,4 +192,4 @@ class TestHarness
 end
 
 TestHarness.run
-```
+~~~

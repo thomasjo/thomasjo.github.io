@@ -6,8 +6,15 @@ email: "thomasjo@gmail.com"
 permalink: /:categories/:year/:month/:day/:title.html
 
 safe: false # NOTE: Will always be set to true in production.
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
+
+redcarpet:
+  extensions:
+    - smart
+    - no_intra_emphasis
+    - tables
+    - autolink
 
 kramdown:
   input: GFM

@@ -1,4 +1,3 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', '~> 22'
-gem 'rb-gsl'
+gem 'github-pages', '~> 28'

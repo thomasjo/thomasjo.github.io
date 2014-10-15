@@ -9,7 +9,9 @@ $unimportant-color: #888;
 $link-color: #06C;
 $link-visited-color: #96C;
 
-$header-font: Helvetica, Arial, sans-serif;
+$default-font: Helvetica, Arial, sans-serif;
+$header-font: $default-font;
+
 $separator: 1px dotted #BBB;
 
 html {
@@ -21,9 +23,9 @@ body {
   margin: 0 auto;
   padding: 15px 40px;
   overflow-y: scroll;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.75;
+  font-family: $default-font;
+  font-size: 16px;
+  line-height: 1.6;
   color: #444;
 }
 
@@ -33,6 +35,27 @@ section, header, article, footer {
 
 h1, h2, h3 {
   font-family: $header-font;
+}
+
+a {
+  border-bottom: 1px dotted $link-color;
+  color: $link-color;
+  text-decoration: none;
+
+  &:visited {
+    border-bottom-color: $link-visited-color;
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    border-bottom-color: $link-color + #222;
+    color: $link-color + #222;
+  }
+
+  &:visited:hover {
+    border-bottom-color: $link-visited-color + #222;
+    color: $link-visited-color + #222;
+  }
 }
 
 header#nav {
@@ -74,6 +97,7 @@ header#nav {
       a, a:active, a:visited {
         color: $theme-color;
         text-decoration: none;
+        border-bottom: none;
       }
 
       a:hover {
@@ -118,27 +142,6 @@ header#nav {
     }
 
     .post-body {
-      a {
-        border-bottom: 1px dotted $link-color;
-        color: $link-color;
-        text-decoration: none;
-
-        &:visited {
-          border-bottom-color: $link-visited-color;
-          color: $link-visited-color;
-        }
-
-        &:hover {
-          border-bottom-color: $link-color + #222;
-          color: $link-color + #222;
-        }
-
-        &:visited:hover {
-          border-bottom-color: $link-visited-color + #222;
-          color: $link-visited-color + #222;
-        }
-      }
-
       a.read-more {
         &:visited {
           border-bottom-color: $link-color;
@@ -152,7 +155,7 @@ header#nav {
       }
 
       h2 {
-        margin: 10px 0;
+        margin: 20px 0 10px;
         font-size: 21px;
       }
 

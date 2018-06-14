@@ -2,7 +2,7 @@
 
 # Jekyll stuff
 _site
-_vendor
+.jekyll-metadata
 
 # Compass
 .sass-cache
